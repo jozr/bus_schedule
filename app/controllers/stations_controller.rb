@@ -28,6 +28,7 @@ class StationsController < ApplicationController
 
   def update
     @station = Station.find(params[:id])
+    @lines = @station.lines
     @station.update(params[:station])
     if @station.valid?
       flash[:notice] = "Your station has been updated."
@@ -43,4 +44,5 @@ class StationsController < ApplicationController
     flash[:notice] = "This station has been deleted"
     redirect_to stations_path
   end
+
 end

@@ -1,0 +1,12 @@
+<%= form_for(@station) do |f| %>
+  <div class='field'>
+    <% Line.all.each do |line| %>
+      <%= check_box_tag "station[line_ids][]", line.id,
+      @station.line_ids.include?(line.id) %>
+      <%= line.name %>
+    <% end %>
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+  </div>
+<% end %>
+

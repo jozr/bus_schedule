@@ -1,2 +1,5 @@
-<h1>Stop#new</h1>
-<p>Find me in app/views/stop/new.html.erb</p>
+<%= content_for(:title, "New stop | Bus Schedule") %>
+
+<h1>Add lines to <%= @station.name %></h1>
+
+<%= render "form" %>
